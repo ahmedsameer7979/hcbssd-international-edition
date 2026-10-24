@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HCBSSD — International Edition</title>
+  
+  <!-- Meta & OpenGraph for Social Sharing -->
+  <meta name="description" content="Human Capacity Building Society for Social Development (HCBSSD) — State of Kuwait. International Edition presented at UNESCO Global Forum against Racism and Discrimination, The Hague." />
+  <meta name="keywords" content="HCBSSD, Human Capacity Building, Kuwait, UNESCO, Disability Rights, Constructive Recognition Theory, DREC Scale, Shuraka, Sanidhum" />
+  <meta property="og:title" content="HCBSSD — International Edition" />
+  <meta property="og:description" content="Human dignity is the foundation of empowerment. Sustainable inclusion is our goal. Executive profile and national initiatives." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/logo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HCBSSD — International Edition" />
+  <meta name="twitter:description" content="Human Capacity Building Society for Social Development — State of Kuwait. Official international presentation." />
+  <meta name="theme-color" content="#0a2540" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  
+  <!-- Google Fonts: Inter & Plus Jakarta Sans & Amiri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0c2340',
+              deepBlue: '#061727',
+              teal: '#0a646d',
+              tealLight: '#0d7d88',
+              gold: '#c5a059',
+              goldLight: '#e4caa0',
+              sand: '#f5edd6',
+              olive: '#476537',
+              cream: '#fbfbf9',
+              slateText: '#334155',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            serif: ['Amiri', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Custom Print Styles */
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; padding: 0 !important; }
+      .sheet { box-shadow: none !important; border: none !important; max-width: 100% !important; margin: 0 !important; }
+    }
+    
+    /* Smooth transitions */
+    * { transition: background-color 0.2s ease, border-color 0.2s ease; }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+<body class="bg-[#edf2f7] text-brand-slateText font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- ================= TOP ACTION BAR (Sticky) ================= -->
+  <header class="no-print sticky top-0 z-50 bg-brand-deepBlue/95 backdrop-blur-md text-white border-b border-white/10 px-4 py-3 shadow-lg">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Brand & Title Badge -->
+      <div class="flex items-center gap-3">
+        <img src="assets/images/logo-icon.png" alt="HCBSSD Logo" class="h-9 w-auto rounded bg-white/10 p-1" />
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-sm tracking-wide text-white">HCBSSD</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-brand-gold/20 text-brand-goldLight border border-brand-gold/30 font-semibold tracking-wider uppercase">International Edition</span>
+          </div>
+          <p class="text-[11px] text-slate-300">Human Capacity Building Society for Social Development · Kuwait</p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 flex-wrap text-xs">
+        <!-- View Toggle -->
+        <button id="viewToggleBtn" onclick="toggleView()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          <span id="viewToggleText">Original PDF View</span>
+        </button>
+
+        <!-- Download PDF -->
+        <a href="HCBSSD-International-Edition.pdf" download="HCBSSD-International-Edition.pdf" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-brand-teal hover:bg-brand-tealLight text-white font-semibold shadow-sm transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          <span>Download PDF (6.9 MB)</span>
+        </a>
+
+        <!-- Print -->
+        <button onclick="window.print()" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          <span>Print</span>
+        </button>
+
+        <!-- Share URL -->
+        <button id="shareBtn" onclick="sharePage()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+          <span id="shareText">Share URL</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= EMBEDDED PDF VIEW CONTAINER (Toggled on request) ================= -->
+  <div id="pdfViewContainer" class="hidden max-w-5xl mx-auto w-full p-4 flex-1">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+      <div class="bg-slate-100 p-3 border-b flex justify-between items-center text-xs text-slate-600">
+        <span class="font-semibold">Document: HCBSSD-International-Edition.pdf</span>
+        <a href="HCBSSD-International-Edition.pdf" target="_blank" class="text-brand-teal hover:underline flex items-center gap-1">Open in new tab ↗</a>
+      </div>
+      <iframe src="HCBSSD-International-Edition.pdf#view=FitH" class="w-full h-[85vh] border-0"></iframe>
+    </div>
+  </div>
+
+  <!-- ================= MAIN WEB DOCUMENT CONTAINER ================= -->
+  <main id="webDocContainer" class="max-w-[850px] mx-auto w-full my-6 bg-white shadow-2xl rounded-xl border border-slate-200/80 overflow-hidden sheet">
+    
+    <!-- HEADER SECTION -->
+    <section class="bg-brand-navy text-white pt-8 pb-6 px-8 relative overflow-hidden">
+      <!-- Subtle watermark logo background -->
+      <div class="absolute right-[-20px] top-[-20px] opacity-5 pointer-events-none w-72 h-72">
+        <img src="assets/images/logo-icon.png" alt="" class="w-full h-full object-contain filter invert" />
+      </div>
+
+      <!-- Top Row: Logo & State Affiliation -->
+      <div class="flex items-center justify-between pb-6 border-b border-white/15">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/logo.jpg" alt="HCBSSD Logo" class="h-14 w-auto rounded shadow-sm bg-white p-1" />
+          <div>
+            <div class="font-serif text-lg leading-tight tracking-normal text-brand-goldLight">جمعية البناء البشري للتنمية الاجتماعية</div>
+            <div class="text-xs text-slate-300 font-semibold tracking-wider uppercase">HCBSSD</div>
+          </div>
+        </div>
+
+        <div class="text-right">
+          <div class="text-xs font-semibold tracking-widest text-slate-300 uppercase">STATE OF KUWAIT · EST. 2022</div>
+          <div class="text-[11px] text-brand-goldLight font-medium">Public Benefit Society · Ministerial Decree 155/A</div>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="mt-6">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+          Human Capacity Building Society for Social Development
+        </h1>
+        <p class="mt-2 text-base text-slate-200 font-medium leading-relaxed">
+          Human dignity is the foundation of empowerment. Sustainable inclusion is our goal.
+        </p>
+      </div>
+
+      <!-- UNESCO Global Forum Ribbon -->
+      <div class="mt-6 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-300">
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+          <span><strong>UNESCO Global Forum</strong> against Racism and Discrimination · Session <em>“Nothing about us, without us: advancing Disability Rights”</em></span>
+        </div>
+        <div class="font-semibold text-brand-goldLight bg-white/10 px-2.5 py-1 rounded">
+          The Hague · 29–30 October 2026
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO METRICS BAR -->
+    <section class="bg-brand-teal text-white py-5 px-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-white/20">
+        <div class="pt-2 sm:pt-0">
+          <div class="text-3xl sm:text-4xl font-extrabold tracking-tight">763+</div>
+          <div class="text-xs text-teal-100 font-medium mt-1">beneficiaries reached</div>
+        </div>
+        <div class="pt-2 sm:pt-0">
+          <div class="text-3xl sm:text-4xl font-extrabold tracking-tight">4</div>
+          <div class="text-xs text-teal-100 font-medium mt-1">national initiatives</div>
+        </div>
+        <div class="pt-2 sm:pt-0">
+          <div class="text-3xl sm:text-4xl font-extrabold tracking-tight">38</div>
+          <div class="text-xs text-teal-100 font-medium mt-1">partner organisations</div>
+        </div>
+        <div class="pt-2 sm:pt-0">
+          <div class="text-3xl sm:text-4xl font-extrabold tracking-tight">20</div>
+          <div class="text-xs text-teal-100 font-medium mt-1">memoranda of understanding</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT BODY -->
+    <div class="p-8 space-y-8">
+
+      <!-- ================= 01 WHO WE ARE ================= -->
+      <section>
+        <div class="flex items-center gap-2.5 mb-3">
+          <span class="w-7 h-7 rounded-full bg-brand-teal text-white text-xs font-bold flex items-center justify-center">01</span>
+          <h2 class="text-xl font-bold text-brand-navy">Who we are</h2>
+        </div>
+        
+        <p class="text-sm leading-relaxed text-slate-700">
+          A Kuwaiti non-profit, public-benefit society founded in 2022. We empower groups under social care to strengthen their dignity and independence through vocational, psychological and social rehabilitation, leading to sustainable inclusion in society and the labour market. Our work is grounded in <strong>Constructive Recognition Theory (CRT)</strong>, and our outcomes are read through the <strong>DREC Scale (Dignity · Recognition · Empowerment)</strong>.
+        </p>
+
+        <!-- Quote Callout -->
+        <div class="mt-4 p-4 rounded-lg bg-brand-sand/50 border-l-4 border-brand-gold text-brand-navy">
+          <p class="text-sm font-semibold italic">
+            “Participation is not a seat at the table. It is recognition of the capacity to contribute.”
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= 02 NATIONAL INITIATIVES ================= -->
+      <section>
+        <div class="flex items-center gap-2.5 mb-3">
+          <span class="w-7 h-7 rounded-full bg-brand-gold text-brand-navy text-xs font-bold flex items-center justify-center">02</span>
+          <h2 class="text-xl font-bold text-brand-navy">National initiatives</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-3">
+          <!-- Shuraka -->
+          <div class="rounded-lg border border-slate-200 bg-slate-50/70 p-4 border-t-4 border-t-brand-teal hover:shadow-md transition">
+            <h3 class="font-bold text-base text-brand-navy">Shuraka’</h3>
+            <p class="text-xs text-brand-teal font-semibold mt-0.5 mb-2">Partners for their Employment</p>
+            <p class="text-xs text-slate-600 leading-normal">
+              Employment as recognition, not charity, for persons with disabilities.
+            </p>
+          </div>
+
+          <!-- Sanidhum -->
+          <div class="rounded-lg border border-slate-200 bg-slate-50/70 p-4 border-t-4 border-t-brand-navy hover:shadow-md transition">
+            <h3 class="font-bold text-base text-brand-navy">Sanidhum</h3>
+            <p class="text-xs text-brand-navy font-semibold mt-0.5 mb-2">Rehabilitation & Reintegration</p>
+            <p class="text-xs text-slate-600 leading-normal">
+              Prepares inmates and released persons for return to society and work.
+            </p>
+          </div>
+
+          <!-- Taafee -->
+          <div class="rounded-lg border border-slate-200 bg-slate-50/70 p-4 border-t-4 border-t-brand-olive hover:shadow-md transition">
+            <h3 class="font-bold text-base text-brand-navy">Taafee</h3>
+            <p class="text-xs text-brand-olive font-semibold mt-0.5 mb-2">Sustainable Recovery</p>
+            <p class="text-xs text-slate-600 leading-normal">
+              Psychological, social and vocational support for people in recovery from addiction.
+            </p>
+          </div>
+
+          <!-- Amal -->
+          <div class="rounded-lg border border-slate-200 bg-slate-50/70 p-4 border-t-4 border-t-brand-gold hover:shadow-md transition">
+            <h3 class="font-bold text-base text-brand-navy">Amal</h3>
+            <p class="text-xs text-brand-gold font-semibold mt-0.5 mb-2">Hope · Protection & Empowerment</p>
+            <p class="text-xs text-slate-600 leading-normal">
+              Supports children, women, older persons and low-income families.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 03 OUR FRAMEWORK: FROM THEORY TO PRACTICE ================= -->
+      <section>
+        <div class="flex items-center gap-2.5 mb-3">
+          <span class="w-7 h-7 rounded-full bg-brand-olive text-white text-xs font-bold flex items-center justify-center">03</span>
+          <h2 class="text-xl font-bold text-brand-navy">Our framework: from theory to practice</h2>
+        </div>
+
+        <p class="text-sm leading-relaxed text-slate-700">
+          Constructive Recognition Theory starts from a shared human condition: every person is exposed to vulnerability. Exposure is a position, not a stigma attached to a particular group. The theory therefore assesses an institution's capacity to respond to vulnerability, rather than judging an individual as vulnerable. It draws on the recognition tradition (Honneth, Fraser, Levinas, Ricoeur, Fineman) in dialogue with Islamic social philosophy (al-Shāṭibī's <em>maqāṣid</em>, Ibn Khaldūn).
+        </p>
+
+        <!-- 3 Core Pillars Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+          <!-- Recognition -->
+          <div class="rounded-lg bg-brand-teal text-white p-4 shadow-sm">
+            <h4 class="font-bold text-base tracking-wide border-b border-white/20 pb-1 mb-2">Recognition</h4>
+            <p class="text-xs leading-relaxed text-teal-50">
+              Identify who needs support, and where, as one would for any member of the organisation.
+            </p>
+          </div>
+
+          <!-- Dignity -->
+          <div class="rounded-lg bg-brand-gold text-brand-navy p-4 shadow-sm">
+            <h4 class="font-bold text-base tracking-wide border-b border-brand-navy/20 pb-1 mb-2">Dignity</h4>
+            <p class="text-xs leading-relaxed font-medium">
+              Respect each person's standing inside the organisation: work that fits their circumstances, not sympathy alone.
+            </p>
+          </div>
+
+          <!-- Empowerment -->
+          <div class="rounded-lg bg-brand-olive text-white p-4 shadow-sm">
+            <h4 class="font-bold text-base tracking-wide border-b border-white/20 pb-1 mb-2">Empowerment</h4>
+            <p class="text-xs leading-relaxed text-emerald-50">
+              Tasks matched to abilities, not assigned to meet a quota; contributions counted as for any employee.
+            </p>
+          </div>
+        </div>
+
+        <!-- DREC Scale Metrics Bar -->
+        <div class="mt-4 rounded-lg bg-slate-100 p-4 border border-slate-200">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center divide-y sm:divide-y-0 sm:divide-x divide-slate-300">
+            <div>
+              <div class="font-bold text-sm text-brand-navy">DREC Scale</div>
+              <div class="text-[11px] text-brand-teal font-semibold mt-0.5"><a href="https://drec.hds-crt.org" target="_blank" class="hover:underline">drec.hds-crt.org</a></div>
+            </div>
+            <div class="pt-2 sm:pt-0">
+              <div class="font-bold text-sm text-brand-navy">7 · 30</div>
+              <div class="text-[11px] text-slate-600 mt-0.5">dimensions · items, five-point self-report</div>
+            </div>
+            <div class="pt-2 sm:pt-0">
+              <div class="font-bold text-sm text-brand-navy">Pilot conducted</div>
+              <div class="text-[11px] text-slate-600 mt-0.5">among persons with disabilities in Kuwait (descriptive)</div>
+            </div>
+            <div class="pt-2 sm:pt-0">
+              <div class="font-bold text-sm text-brand-navy">N = 600 · 2030</div>
+              <div class="text-[11px] text-slate-600 mt-0.5">three-phase validation planned, OSF pre-registration</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 04 IMPACT IN NUMBERS ================= -->
+      <section>
+        <div class="flex items-center gap-2.5 mb-3">
+          <span class="w-7 h-7 rounded-full bg-brand-navy text-white text-xs font-bold flex items-center justify-center">04</span>
+          <h2 class="text-xl font-bold text-brand-navy">Impact in numbers</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-3">
+          
+          <!-- Column 1: Shuraka' Field Lab -->
+          <div class="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
+            <h3 class="font-bold text-base text-brand-navy">Shuraka’ — the field laboratory</h3>
+            <p class="text-xs text-slate-500 italic mt-0.5 mb-4">36 weeks in three 12-week phases, ending in on-the-job training</p>
+
+            <div class="grid grid-cols-2 gap-4 pb-4 border-b border-slate-200">
+              <div>
+                <div class="text-3xl font-extrabold text-brand-navy">481</div>
+                <div class="text-xs text-slate-600">enrolled since 2018</div>
+              </div>
+              <div>
+                <div class="text-3xl font-extrabold text-brand-navy">231</div>
+                <div class="text-xs text-slate-600">obtained work · placement rate 48%</div>
+              </div>
+            </div>
+
+            <!-- Retention Highlight -->
+            <div class="py-4 border-b border-slate-200 flex items-center justify-between">
+              <div>
+                <div class="text-xs font-semibold text-slate-700">Still in work (226 of 231)</div>
+                <div class="w-36 h-2 bg-slate-200 rounded-full mt-1.5 overflow-hidden">
+                  <div class="h-full bg-emerald-500 rounded-full" style="width: 97.8%"></div>
+                </div>
+              </div>
+              <div class="text-3xl font-extrabold text-emerald-600">97.8%</div>
+            </div>
+
+            <!-- ROI Highlight -->
+            <div class="pt-4 flex items-center gap-3">
+              <span class="text-2xl font-extrabold text-brand-navy">&lt; 3 yrs</span>
+              <span class="text-xs text-slate-600">to recover the public investment of KD 4.3 million</span>
+            </div>
+          </div>
+
+          <!-- Column 2: Sanidhum -->
+          <div class="rounded-xl border border-slate-200 bg-slate-50/50 p-5">
+            <h3 class="font-bold text-base text-brand-navy">Sanidhum</h3>
+            <p class="text-xs text-slate-500 italic mt-0.5 mb-4">Rehabilitation inside and after correctional institutions</p>
+
+            <div class="grid grid-cols-2 gap-4 pb-4 border-b border-slate-200">
+              <div>
+                <div class="text-3xl font-extrabold text-brand-navy">196</div>
+                <div class="text-xs text-slate-600">participants inside correctional institutions</div>
+              </div>
+              <div>
+                <div class="text-3xl font-extrabold text-brand-navy">86</div>
+                <div class="text-xs text-slate-600">enrolled after release</div>
+              </div>
+            </div>
+
+            <!-- Employed Highlight -->
+            <div class="py-4 border-b border-slate-200 flex items-center justify-between">
+              <div>
+                <div class="text-xs font-semibold text-slate-700">Employed after release</div>
+                <div class="w-36 h-2 bg-slate-200 rounded-full mt-1.5 overflow-hidden">
+                  <div class="h-full bg-brand-teal rounded-full" style="width: 43%"></div>
+                </div>
+              </div>
+              <div class="text-3xl font-extrabold text-brand-teal">43%</div>
+            </div>
+
+            <!-- Recidivism & Infrastructure -->
+            <div class="pt-4 grid grid-cols-2 gap-4">
+              <div>
+                <div class="text-2xl font-extrabold text-emerald-600">0%</div>
+                <div class="text-xs text-slate-600">return to prison among monitored participants to date</div>
+              </div>
+              <div>
+                <div class="text-2xl font-extrabold text-brand-navy">73</div>
+                <div class="text-xs text-slate-600">infrastructure projects for correctional institutions, in four phases</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Institutional Total Counters -->
+        <div class="mt-6 pt-5 border-t border-slate-200 grid grid-cols-3 gap-4 text-center">
+          <div>
+            <div class="text-2xl font-extrabold text-brand-navy">7</div>
+            <div class="text-xs text-slate-600 font-medium mt-0.5">beneficiary groups</div>
+          </div>
+          <div>
+            <div class="text-2xl font-extrabold text-brand-navy">5</div>
+            <div class="text-xs text-slate-600 font-medium mt-0.5">specialised units</div>
+          </div>
+          <div>
+            <div class="text-2xl font-extrabold text-brand-navy">3</div>
+            <div class="text-xs text-slate-600 font-medium mt-0.5">professional practice manuals</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 05 SPECIALISED UNITS & CONTACT ================= -->
+      <section class="border-t border-slate-200 pt-6">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div class="flex items-center gap-2.5">
+            <span class="w-7 h-7 rounded-full bg-slate-800 text-white text-xs font-bold flex items-center justify-center">05</span>
+            <h2 class="text-lg font-bold text-brand-navy">Specialised units</h2>
+          </div>
+
+          <!-- Contact & Verification Link -->
+          <div class="flex items-center gap-4 text-xs text-right">
+            <div>
+              <div class="text-slate-500 font-medium">Contact</div>
+              <div class="font-bold text-brand-navy">State of Kuwait</div>
+              <a href="https://new.hcbssd.org" target="_blank" class="text-brand-teal font-semibold hover:underline">new.hcbssd.org</a>
+            </div>
+            
+            <!-- QR Representation -->
+            <div class="w-14 h-14 p-1 bg-white border border-slate-300 rounded shadow-sm flex items-center justify-center">
+              <img src="assets/images/favicon.png" alt="QR Link" class="w-10 h-10 object-contain" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- DOCUMENT FOOTER -->
+    <footer class="bg-slate-100 border-t border-slate-200 px-8 py-4 flex flex-wrap items-center justify-between text-xs text-slate-500">
+      <div>
+        <span>© 2026 Human Capacity Building Society for Social Development (HCBSSD)</span>
+        <span class="mx-2">·</span>
+        <span>Kuwait</span>
+      </div>
+      <div class="font-medium text-brand-navy">
+        International Edition · UNESCO Global Forum Presentation
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ================= PAGE FOOTER (Bottom toolbar) ================= -->
+  <footer class="no-print py-4 text-center text-xs text-slate-500">
+    <p>HCBSSD — International Edition · Human Capacity Building Society for Social Development, Kuwait</p>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    let isPdfMode = false;
+
+    function toggleView() {
+      const webDoc = document.getElementById('webDocContainer');
+      const pdfView = document.getElementById('pdfViewContainer');
+      const toggleText = document.getElementById('viewToggleText');
+
+      isPdfMode = !isPdfMode;
+      if (isPdfMode) {
+        webDoc.classList.add('hidden');
+        pdfView.classList.remove('hidden');
+        toggleText.textContent = 'Interactive Web View';
+      } else {
+        pdfView.classList.add('hidden');
+        webDoc.classList.remove('hidden');
+        toggleText.textContent = 'Original PDF View';
+      }
+    }
+
+    function sharePage() {
+      const shareUrl = window.location.href;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(shareUrl).then(() => {
+          const shareText = document.getElementById('shareText');
+          shareText.textContent = 'Copied Link! ✓';
+          setTimeout(() => {
+            shareText.textContent = 'Share URL';
+          }, 2500);
+        });
+      } else {
+        prompt('Copy page URL:', shareUrl);
+      }
+    }
+  </script>
+</body>
+</html>
